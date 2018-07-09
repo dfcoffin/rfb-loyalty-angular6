@@ -2,7 +2,7 @@
 {
   "name": "rfbloyalty",
   "version": "0.0.0",
-  "description": "Description for rfbloyalty",
+  "description": "Running for Brews Loyalty Application",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

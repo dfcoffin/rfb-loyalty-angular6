@@ -57,6 +57,10 @@ jobs:
           path: ~/junit
 
       - run:
+          name: install Node.js
+          command: sudo npm node@8.9.4 --save-exact
+
+      - run:
           name: install yarn
           command: sudo npm install -g yarn
 
