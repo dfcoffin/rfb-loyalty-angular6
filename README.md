@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/dfcoffin/rfb-loyalty-angular6.svg?style=svg)](https://circleci.com/gh/dfcoffin/rfb-loyalty-angular6)
 # rfbloyalty
 This application was generated using JHipster 5.0.2, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.0.2](https://www.jhipster.tech/documentation-archive/v5.0.2).
 
