@@ -53,6 +53,10 @@ version = '0.0.1-SNAPSHOT'
 
 description = ''
 
+bootRepackage {
+    mainClassName = 'com.rfb.RfbloyaltyApp'
+}
+
 bootWar {
    mainClassName = 'com.rfb.RfbloyaltyApp'
 }
