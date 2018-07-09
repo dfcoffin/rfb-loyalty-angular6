@@ -58,7 +58,8 @@ jobs:
 
       - run:
           name: install Node.js
-          command: sudo npm install node@8.9.4 --save-exact
+#          command: sudo npm install -g node@8.9.4 --save-exact
+          command: node --version
 
       - run:
           name: install yarn
