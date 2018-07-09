@@ -56,13 +56,13 @@ jobs:
       - store_artifacts:
           path: ~/junit
 
-      - run:
-          name: install Node.js
-          command: sudo npm install node@8.9.4 --save-exact
+#      - run:
+#          name: install Node.js
+#          command: sudo npm install node@8.9.4 --save-exact
 
-      - run:
-          name: install yarn
-          command: sudo npm install -g yarn
+#      - run:
+#          name: install yarn
+#          command: sudo npm install -g yarn
 
       - run:
           name: Build Docker Image
