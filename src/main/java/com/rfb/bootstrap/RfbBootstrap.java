@@ -77,6 +77,11 @@ public class RfbBootstrap implements CommandLineRunner {
         RfbEvent yardOfAleEvent = getRfbEvent(yardOfAle);
 
         getRfbEventAttendance(rfbUser, yardOfAleEvent);
+
+        RfbLocation pourHouse = getRfbLocation("Tampa - Pour House", DayOfWeek.MONDAY.getValue());
+        RfbLocation macDintons = getRfbLocation("Tampa - Mac Dintons", DayOfWeek.TUESDAY.getValue());
+        RfbLocation satRun = getRfbLocation("Saturday Run for testing", DayOfWeek.SATURDAY.getValue());
+        RfbLocation elbowRoom = getRfbLocation("Buckhead - Elbow Room", DayOfWeek.MONDAY.getValue());
     }
 
     private void getRfbEventAttendance(RfbUser rfbUser, RfbEvent rfbEvent) {
