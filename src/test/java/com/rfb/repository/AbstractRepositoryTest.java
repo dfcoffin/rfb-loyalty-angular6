@@ -12,7 +12,4 @@ abstract class AbstractRepositoryTest {
 
     @Autowired
     RfbEventAttendanceRepository rfbEventAttendanceRepository;
-
-    @Autowired
-    RfbUserRepository rfbUserRepository;
 }
