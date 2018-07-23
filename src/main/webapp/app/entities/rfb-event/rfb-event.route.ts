@@ -33,7 +33,7 @@ export const rfbEventRoute: Routes = [
             pagingParams: JhiResolvePagingParams
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ORGANIZER', 'ROLE_ADMIN'],
             defaultSort: 'id,asc',
             pageTitle: 'RfbEvents'
         },
@@ -46,7 +46,7 @@ export const rfbEventRoute: Routes = [
             rfbEvent: RfbEventResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ORGANIZER', 'ROLE_ADMIN'],
             pageTitle: 'RfbEvents'
         },
         canActivate: [UserRouteAccessService]
@@ -58,7 +58,7 @@ export const rfbEventRoute: Routes = [
             rfbEvent: RfbEventResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ORGANIZER', 'ROLE_ADMIN'],
             pageTitle: 'RfbEvents'
         },
         canActivate: [UserRouteAccessService]
@@ -70,7 +70,7 @@ export const rfbEventRoute: Routes = [
             rfbEvent: RfbEventResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ORGANIZER', 'ROLE_ADMIN'],
             pageTitle: 'RfbEvents'
         },
         canActivate: [UserRouteAccessService]
@@ -85,7 +85,7 @@ export const rfbEventPopupRoute: Routes = [
             rfbEvent: RfbEventResolve
         },
         data: {
-            authorities: ['ROLE_USER'],
+            authorities: ['ROLE_ORGANIZER', 'ROLE_ADMIN'],
             pageTitle: 'RfbEvents'
         },
         canActivate: [UserRouteAccessService],
