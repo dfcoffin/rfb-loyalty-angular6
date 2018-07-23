@@ -28,7 +28,7 @@ export class RfbLocationDeleteDialogComponent {
         this.rfbLocationService.delete(id).subscribe(response => {
             this.eventManager.broadcast({
                 name: 'rfbLocationListModification',
-                content: 'Deleted a Location'
+                content: 'Deleted an Event Location'
             });
             this.activeModal.dismiss(true);
         });

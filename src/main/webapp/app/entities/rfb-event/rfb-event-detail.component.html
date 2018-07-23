@@ -13,7 +13,7 @@
                 <dd>
                     <span>{{rfbEvent.eventCode}}</span>
                 </dd>
-                <dt><span>Rfb Location</span></dt>
+                <dt><span>Event Location</span></dt>
                 <dd>
                     <div *ngIf="rfbEvent.rfbLocationId">
                         <a [routerLink]="['/rfb-location', rfbEvent.rfbLocationId, 'view']">{{rfbEvent.rfbLocationId}}</a>

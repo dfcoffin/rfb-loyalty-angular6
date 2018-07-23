@@ -30,7 +30,7 @@ export const rfbEventAttendanceRoute: Routes = [
         component: RfbEventAttendanceComponent,
         data: {
             authorities: ['ROLE_ADMIN'],
-            pageTitle: 'RfbEventAttendances'
+            pageTitle: 'Event Attendances'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -42,7 +42,7 @@ export const rfbEventAttendanceRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_ADMIN'],
-            pageTitle: 'RfbEventAttendances'
+            pageTitle: 'Event Attendances'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -54,7 +54,7 @@ export const rfbEventAttendanceRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_ADMIN'],
-            pageTitle: 'RfbEventAttendances'
+            pageTitle: 'Event Attendances'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -66,7 +66,7 @@ export const rfbEventAttendanceRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_ADMIN'],
-            pageTitle: 'RfbEventAttendances'
+            pageTitle: 'Event Attendances'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -81,7 +81,7 @@ export const rfbEventAttendancePopupRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_ADMIN'],
-            pageTitle: 'RfbEventAttendances'
+            pageTitle: 'Event Attendances'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

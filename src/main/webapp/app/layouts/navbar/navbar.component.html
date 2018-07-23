@@ -23,7 +23,7 @@
                     <span>
                         <fa-icon [icon]="'th-list'"></fa-icon>
                         <span>
-                            Admin
+                            Event Administration
                         </span>
                     </span>
                 </a>
@@ -31,7 +31,7 @@
                     <li *jhiHasAnyAuthority="'ROLE_ADMIN'">
                         <a class="dropdown-item" routerLink="rfb-location" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon [icon]="'asterisk'" [fixedWidth]="true"></fa-icon>
-                            <span>Locations</span>
+                            <span>Event Locations</span>
                         </a>
                     </li>
                     <li *jhiHasAnyAuthority="['ROLE_ADMIN', 'ROLE_ORGANIZER']">

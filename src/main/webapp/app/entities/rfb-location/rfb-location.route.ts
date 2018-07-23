@@ -35,7 +35,7 @@ export const rfbLocationRoute: Routes = [
         data: {
             authorities: ['ROLE_ADMIN'],
             defaultSort: 'id,asc',
-            pageTitle: 'RfbLocations'
+            pageTitle: 'Event Locations'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -47,7 +47,7 @@ export const rfbLocationRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_ADMIN'],
-            pageTitle: 'RfbLocations'
+            pageTitle: 'Event Locations'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -59,7 +59,7 @@ export const rfbLocationRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_ADMIN'],
-            pageTitle: 'RfbLocations'
+            pageTitle: 'Event Locations'
         },
         canActivate: [UserRouteAccessService]
     },
@@ -71,7 +71,7 @@ export const rfbLocationRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_ADMIN'],
-            pageTitle: 'RfbLocations'
+            pageTitle: 'Event Locations'
         },
         canActivate: [UserRouteAccessService]
     }
@@ -86,7 +86,7 @@ export const rfbLocationPopupRoute: Routes = [
         },
         data: {
             authorities: ['ROLE_ADMIN'],
-            pageTitle: 'RfbLocations'
+            pageTitle: 'Event Locations'
         },
         canActivate: [UserRouteAccessService],
         outlet: 'popup'

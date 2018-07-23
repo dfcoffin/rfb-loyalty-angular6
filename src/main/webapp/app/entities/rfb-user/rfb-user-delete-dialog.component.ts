@@ -24,7 +24,7 @@ export class RfbUserDeleteDialogComponent {
         this.rfbUserService.delete(id).subscribe(response => {
             this.eventManager.broadcast({
                 name: 'rfbUserListModification',
-                content: 'Deleted an rfbUser'
+                content: 'Deleted a Runner'
             });
             this.activeModal.dismiss(true);
         });
