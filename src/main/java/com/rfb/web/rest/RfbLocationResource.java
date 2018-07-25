@@ -30,7 +30,7 @@ public class RfbLocationResource {
 
     private final Logger log = LoggerFactory.getLogger(RfbLocationResource.class);
 
-    private static final String ENTITY_NAME = "rfbLocation";
+    private static final String ENTITY_NAME = "Location";
 
     private final RfbLocationService rfbLocationService;
 
@@ -48,9 +48,9 @@ public class RfbLocationResource {
     @PostMapping("/rfb-locations")
     @Timed
     public ResponseEntity<RfbLocationDTO> createRfbLocation(@RequestBody RfbLocationDTO rfbLocationDTO) throws URISyntaxException {
-        log.debug("REST request to save RfbLocation : {}", rfbLocationDTO);
+        log.debug("REST request to save Location : {}", rfbLocationDTO);
         if (rfbLocationDTO.getId() != null) {
-            throw new BadRequestAlertException("A new rfbLocation cannot already have an ID", ENTITY_NAME, "idexists");
+            throw new BadRequestAlertException("A new Location cannot already have an ID", ENTITY_NAME, "idexists");
         }
         RfbLocationDTO result = rfbLocationService.save(rfbLocationDTO);
         return ResponseEntity.created(new URI("/api/rfb-locations/" + result.getId()))
@@ -70,7 +70,7 @@ public class RfbLocationResource {
     @PutMapping("/rfb-locations")
     @Timed
     public ResponseEntity<RfbLocationDTO> updateRfbLocation(@RequestBody RfbLocationDTO rfbLocationDTO) throws URISyntaxException {
-        log.debug("REST request to update RfbLocation : {}", rfbLocationDTO);
+        log.debug("REST request to update Location : {}", rfbLocationDTO);
         if (rfbLocationDTO.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
@@ -89,7 +89,7 @@ public class RfbLocationResource {
     @GetMapping("/rfb-locations")
     @Timed
     public ResponseEntity<List<RfbLocationDTO>> getAllRfbLocations(Pageable pageable) {
-        log.debug("REST request to get a page of RfbLocations");
+        log.debug("REST request to get a page of Locations");
         Page<RfbLocationDTO> page = rfbLocationService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/rfb-locations");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
@@ -104,7 +104,7 @@ public class RfbLocationResource {
     @GetMapping("/rfb-locations/{id}")
     @Timed
     public ResponseEntity<RfbLocationDTO> getRfbLocation(@PathVariable Long id) {
-        log.debug("REST request to get RfbLocation : {}", id);
+        log.debug("REST request to get Location : {}", id);
         Optional<RfbLocationDTO> rfbLocationDTO = rfbLocationService.findOne(id);
         return ResponseUtil.wrapOrNotFound(rfbLocationDTO);
     }
@@ -118,7 +118,7 @@ public class RfbLocationResource {
     @DeleteMapping("/rfb-locations/{id}")
     @Timed
     public ResponseEntity<Void> deleteRfbLocation(@PathVariable Long id) {
-        log.debug("REST request to delete RfbLocation : {}", id);
+        log.debug("REST request to delete Location : {}", id);
         rfbLocationService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }

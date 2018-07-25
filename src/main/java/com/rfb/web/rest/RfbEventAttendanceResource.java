@@ -30,7 +30,7 @@ public class RfbEventAttendanceResource {
 
     private final Logger log = LoggerFactory.getLogger(RfbEventAttendanceResource.class);
 
-    private static final String ENTITY_NAME = "rfbEventAttendance";
+    private static final String ENTITY_NAME = "Event Attendance";
 
     private final RfbEventAttendanceService rfbEventAttendanceService;
 
@@ -48,9 +48,9 @@ public class RfbEventAttendanceResource {
     @PostMapping("/rfb-event-attendances")
     @Timed
     public ResponseEntity<RfbEventAttendanceDTO> createRfbEventAttendance(@RequestBody RfbEventAttendanceDTO rfbEventAttendanceDTO) throws URISyntaxException {
-        log.debug("REST request to save RfbEventAttendance : {}", rfbEventAttendanceDTO);
+        log.debug("REST request to save an Event Attendance : {}", rfbEventAttendanceDTO);
         if (rfbEventAttendanceDTO.getId() != null) {
-            throw new BadRequestAlertException("A new rfbEventAttendance cannot already have an ID", ENTITY_NAME, "idexists");
+            throw new BadRequestAlertException("A new Event Attendance cannot already have an ID", ENTITY_NAME, "idexists");
         }
         RfbEventAttendanceDTO result = rfbEventAttendanceService.save(rfbEventAttendanceDTO);
         return ResponseEntity.created(new URI("/api/rfb-event-attendances/" + result.getId()))
@@ -70,7 +70,7 @@ public class RfbEventAttendanceResource {
     @PutMapping("/rfb-event-attendances")
     @Timed
     public ResponseEntity<RfbEventAttendanceDTO> updateRfbEventAttendance(@RequestBody RfbEventAttendanceDTO rfbEventAttendanceDTO) throws URISyntaxException {
-        log.debug("REST request to update RfbEventAttendance : {}", rfbEventAttendanceDTO);
+        log.debug("REST request to update Event Attendance : {}", rfbEventAttendanceDTO);
         if (rfbEventAttendanceDTO.getId() == null) {
             throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
@@ -89,7 +89,7 @@ public class RfbEventAttendanceResource {
     @GetMapping("/rfb-event-attendances")
     @Timed
     public ResponseEntity<List<RfbEventAttendanceDTO>> getAllRfbEventAttendances(Pageable pageable) {
-        log.debug("REST request to get a page of RfbEventAttendances");
+        log.debug("REST request to get a page of Event Attendances");
         Page<RfbEventAttendanceDTO> page = rfbEventAttendanceService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/rfb-event-attendances");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
@@ -104,7 +104,7 @@ public class RfbEventAttendanceResource {
     @GetMapping("/rfb-event-attendances/{id}")
     @Timed
     public ResponseEntity<RfbEventAttendanceDTO> getRfbEventAttendance(@PathVariable Long id) {
-        log.debug("REST request to get RfbEventAttendance : {}", id);
+        log.debug("REST request to get Event Attendance : {}", id);
         Optional<RfbEventAttendanceDTO> rfbEventAttendanceDTO = rfbEventAttendanceService.findOne(id);
         return ResponseUtil.wrapOrNotFound(rfbEventAttendanceDTO);
     }
@@ -118,7 +118,7 @@ public class RfbEventAttendanceResource {
     @DeleteMapping("/rfb-event-attendances/{id}")
     @Timed
     public ResponseEntity<Void> deleteRfbEventAttendance(@PathVariable Long id) {
-        log.debug("REST request to delete RfbEventAttendance : {}", id);
+        log.debug("REST request to delete Event Attendance : {}", id);
         rfbEventAttendanceService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }

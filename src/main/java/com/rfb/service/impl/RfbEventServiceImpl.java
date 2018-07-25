@@ -39,7 +39,7 @@ public class RfbEventServiceImpl implements RfbEventService {
      */
     @Override
     public RfbEventDTO save(RfbEventDTO rfbEventDTO) {
-        log.debug("Request to save RfbEvent : {}", rfbEventDTO);
+        log.debug("Request to save Event : {}", rfbEventDTO);
         RfbEvent rfbEvent = rfbEventMapper.toEntity(rfbEventDTO);
         rfbEvent = rfbEventRepository.save(rfbEvent);
         return rfbEventMapper.toDto(rfbEvent);
@@ -54,7 +54,7 @@ public class RfbEventServiceImpl implements RfbEventService {
     @Override
     @Transactional(readOnly = true)
     public Page<RfbEventDTO> findAll(Pageable pageable) {
-        log.debug("Request to get all RfbEvents");
+        log.debug("Request to get all Events");
         return rfbEventRepository.findAll(pageable)
             .map(rfbEventMapper::toDto);
     }
@@ -69,7 +69,7 @@ public class RfbEventServiceImpl implements RfbEventService {
     @Override
     @Transactional(readOnly = true)
     public Optional<RfbEventDTO> findOne(Long id) {
-        log.debug("Request to get RfbEvent : {}", id);
+        log.debug("Request to get Event : {}", id);
         return rfbEventRepository.findById(id)
             .map(rfbEventMapper::toDto);
     }
@@ -81,7 +81,7 @@ public class RfbEventServiceImpl implements RfbEventService {
      */
     @Override
     public void delete(Long id) {
-        log.debug("Request to delete RfbEvent : {}", id);
+        log.debug("Request to delete Event : {}", id);
         rfbEventRepository.deleteById(id);
     }
 }

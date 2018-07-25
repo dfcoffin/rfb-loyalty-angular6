@@ -39,7 +39,7 @@ public class RfbLocationServiceImpl implements RfbLocationService {
      */
     @Override
     public RfbLocationDTO save(RfbLocationDTO rfbLocationDTO) {
-        log.debug("Request to save RfbLocation : {}", rfbLocationDTO);
+        log.debug("Request to save Location : {}", rfbLocationDTO);
         RfbLocation rfbLocation = rfbLocationMapper.toEntity(rfbLocationDTO);
         rfbLocation = rfbLocationRepository.save(rfbLocation);
         return rfbLocationMapper.toDto(rfbLocation);
@@ -54,7 +54,7 @@ public class RfbLocationServiceImpl implements RfbLocationService {
     @Override
     @Transactional(readOnly = true)
     public Page<RfbLocationDTO> findAll(Pageable pageable) {
-        log.debug("Request to get all RfbLocations");
+        log.debug("Request to get all Locations");
         return rfbLocationRepository.findAll(pageable)
             .map(rfbLocationMapper::toDto);
     }
@@ -69,7 +69,7 @@ public class RfbLocationServiceImpl implements RfbLocationService {
     @Override
     @Transactional(readOnly = true)
     public Optional<RfbLocationDTO> findOne(Long id) {
-        log.debug("Request to get RfbLocation : {}", id);
+        log.debug("Request to get Location : {}", id);
         return rfbLocationRepository.findById(id)
             .map(rfbLocationMapper::toDto);
     }
@@ -81,7 +81,7 @@ public class RfbLocationServiceImpl implements RfbLocationService {
      */
     @Override
     public void delete(Long id) {
-        log.debug("Request to delete RfbLocation : {}", id);
+        log.debug("Request to delete Location : {}", id);
         rfbLocationRepository.deleteById(id);
     }
 }
